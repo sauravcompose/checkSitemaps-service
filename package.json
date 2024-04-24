@@ -1,0 +1,22 @@
+{
+  "name": "checksitemaps-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "serverless offline",
+    "deploy": "serverless deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.13",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "serverless-offline": "^13.3.4"
+  }
+}

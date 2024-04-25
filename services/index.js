@@ -29,7 +29,6 @@ async function fetchSitemap(url) {
         const response = await axios.request(config);
         return response.data;
     } catch (error) {
-        console.error("Error in fetching sitemap", error);
         throw new Error("Error in fetching sitemap", error);
     }
 }
@@ -81,7 +80,7 @@ async function fetchUrl(url) {
 async function sendEmail({ successUrls, errorUrls }) {
     try {
         const emails = process.env.RECEIVER_EMAIL.split(',');
-        console.log({ emails });
+
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
             port: 587,
@@ -101,7 +100,6 @@ async function sendEmail({ successUrls, errorUrls }) {
 
         await transporter.sendMail(mailOptions);
     } catch (error) {
-        console.error("Error while sending email", error);
         throw new Error("Error while sending email.");
     }
 }

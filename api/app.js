@@ -11,12 +11,12 @@ module.exports.handler = async (event) => {
       urls.push(...list);
     }
     console.log({ urls: urls.length });
-    const { successUrls, errorUrls } = await checkUrls(urls);
+    const { successUrls, errorUrls } = await checkUrls(urls.slice(0, 5));
 
     if (errorUrls.length > 0) {
       console.log("Error Urls: ", errorUrls.length);
     }
-    await sendEmail({ successUrls, errorUrls });
+    // await sendEmail({ successUrls, errorUrls });
     return {
       statusCode: 200,
       body: JSON.stringify({
